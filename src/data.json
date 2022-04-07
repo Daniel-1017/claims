@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "team": "Real Madrid",
+    "bestPlayer": "Benzema"
+  },
+  {
+    "id": 2,
+    "team": "PSG",
+    "bestPlayer": "Messi"
+  }
+]
