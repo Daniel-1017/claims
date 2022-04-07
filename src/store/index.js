@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import claimsReducer from "./reducers/claimsReducer";
+import claimSlice from "./claim-slice";
 
 const store = configureStore({
-  reducer: { claimsReducer: claimsReducer },
+  reducer: { claim: claimSlice },
 });
 
 export default store;

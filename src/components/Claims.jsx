@@ -1,31 +1,22 @@
-import React, { useEffect } from "react";
+import React, { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addClaims } from "../store/actions/claimsActions";
+import { claimActions } from "../store/claim-slice";
 
 const Claims = () => {
   const dispatch = useDispatch();
-  const claimsSelector = useSelector((state) => state.claimsReducer.claims);
+  const claimSelector = useSelector((state) => state.claim.claim);
+  // use map on claimSelector ↑
 
-  const fetchDataHandler = () => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+  // ↓ use the fetchClaimHandler function when you click the "submit" button
+  const fetchClaimHandler = () => {
+    fetch("URL")
       .then((response) => response.json())
       .then((data) => {
-        return dispatch(addClaims(data));
+        return dispatch(claimActions.addClaim(data));
       });
   };
 
-  useEffect(() => {
-    fetchDataHandler();
-  }, []);
-
-  return (
-    <div>
-      <ul>
-        {claimsSelector &&
-          claimsSelector.map((user) => <li key={user.id}>{user.name}</li>)}
-      </ul>
-    </div>
-  );
+  return <h1>Claims</h1>;
 };
 
 export default Claims;
