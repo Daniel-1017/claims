@@ -1,8 +1,12 @@
 import React from "react";
-import Claims from "./components/Claims";
+import Menu from "./components/Menu/Menu";
 
 const App = () => {
-  return <Claims />;
+  return (
+    <React.Fragment>
+      <Menu />
+    </React.Fragment>
+  );
 };
 
 export default App;
